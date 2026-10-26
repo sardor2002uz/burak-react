@@ -6,56 +6,51 @@ export function HomeNavbar() {
 
     return (
         <div className="home-navbar">
-            <Container sx={{ mt: "55px", height: "642px" }}>
+            <Container className="navbar-container">
                 <Stack
-                    sx={{
-                        height: "50px",
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                    }}
+                    className="menu"
                 >
                     <Box>
                         <NavLink to="/">
-                            <img
-                                style={{ width: "125px", height: "30px" }}
-                                src="/icons/burak.svg"
-                            />
+                            <img className="brand-logo" src="/icons/burak.svg" />
                         </NavLink>
                     </Box>
                     <Stack
-                        sx={{
-                            flexDirection: "row",
-                            justifyContent: "space-between",
-                            minWidth: "700px",
-                            alignItems: "center",
-                        }}
+                        className="links"
                     >
                         <Box className={"hover-line"}>
                             <NavLink to="/" activeClassName={"underline"}>
                                 Home
                             </NavLink>
                         </Box>
-                        <Box className={"hover-line"}>
+                        <Box
+                            className={"hover-line"}
+                        >
                             <NavLink to="/products" activeClassName={"underline"}>
                                 Products
                             </NavLink>
                         </Box>
                         {authMember ? (
-                            <Box className={"hover-line"}>
+                            <Box
+                                className={"hover-line"}
+                            >
                                 <NavLink to="/orders" activeClassName={"underline"}>
                                     Orders
                                 </NavLink>
                             </Box>
                         ) : null}
                         {authMember ? (
-                            <Box className={"hover-line"}>
+                            <Box
+                                className={"hover-line"}
+                            >
                                 <NavLink to="/member-page" activeClassName={"underline"}>
                                     My Page
                                 </NavLink>
                             </Box>
                         ) : null}
-                        <Box className={"hover-line"}>
+                        <Box
+                            className={"hover-line"}
+                        >
                             <NavLink to="/help" activeClassName={"underline"}>
                                 Help
                             </NavLink>
@@ -66,13 +61,17 @@ export function HomeNavbar() {
                             <Box>
                                 <Button
                                     variant="contained"
-                                    style={{ background: "#3736CC", color: "#f8f8ff" }}
+                                    className="login-button"
                                 >
                                     Login
                                 </Button>
                             </Box>
                         ) : (
-                            <img />
+                            <img
+                                className="user-avatar"
+                                src={"/icons/default-user.svg"}
+                                aria-haspopup={"true"}
+                            />
                         )}
 
                     </Stack>
