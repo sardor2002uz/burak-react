@@ -11,7 +11,7 @@ export default function HomeNavbar() {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/bumarak.svg" />
+              <span className="brand-wordmark">BURAK</span>
             </NavLink>
           </Box>
           <Stack className="links">
@@ -32,13 +32,11 @@ export default function HomeNavbar() {
                 </NavLink>
               </Box>
             ) : null}
-            {authMember ? (
-              <Box className={"hover-line"}>
-                <NavLink to="/member-page" activeClassName={"underline"}>
-                  My Page
-                </NavLink>
-              </Box>
-            ) : null}
+            <Box className={"hover-line"}>
+              <NavLink to="/member-page" activeClassName={"underline"}>
+                MyPage
+              </NavLink>
+            </Box>
             <Box className={"hover-line"}>
               <NavLink to="/help" activeClassName={"underline"}>
                 Help
@@ -64,7 +62,7 @@ export default function HomeNavbar() {
         <Stack className={"header-frame"}>
           <Stack className={"detail"}>
             <Box className={"head-main-txt"}>
-              World's Most Delicious Cousine
+              World's Most Delicious Cuisine
             </Box>
             <Box className={"wel-txt"}>The Choice, not just a choice</Box>
             <Box className={"service-txt"}>24 hours service</Box>

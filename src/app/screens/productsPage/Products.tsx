@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { Box, Button, Container, Stack } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
@@ -10,30 +10,48 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const products = [
-  { productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-  { productName: "Kebab", imagePath: "/img/kebab-fresh.webp" },
-  { productName: "Kebab", imagePath: "/img/kebab.webp" },
-  { productName: "Lavash", imagePath: "/img/lavash.webp" },
-  { productName: "Lavash", imagePath: "/img/lavash.webp" },
-  { productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-  { productName: "Kebab", imagePath: "/img/kebab.webp" },
-  { productName: "Kebab", imagePath: "/img/kebab-fresh.webp" },
+  { productName: "Korean Spicy Soup", imagePath: "/img/cutlet.webp", category: "Dish", price: 15, views: 26 },
+  { productName: "Vegetarian Soup", imagePath: "/img/fresh.webp", category: "Dish", price: 15, views: 32 },
+  { productName: "Salmon Pasta", imagePath: "/img/food-city.webp", category: "Dish", price: 18, views: 20 },
+  { productName: "Kebab Rice", imagePath: "/img/kebab-fresh.webp", category: "Dish", price: 18, views: 18 },
+  { productName: "Korean Spicy Soup", imagePath: "/img/cutlet.webp", category: "Dish", price: 15, views: 24 },
+  { productName: "Vegetarian Soup", imagePath: "/img/fresh.webp", category: "Dish", price: 15, views: 15 },
+  { productName: "Salmon Pasta", imagePath: "/img/food-city.webp", category: "Dish", price: 18, views: 21 },
+  { productName: "Kebab Rice", imagePath: "/img/kebab-fresh.webp", category: "Dish", price: 18, views: 29 },
 ];
 
 export default function Products() {
+  const [query, setQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState("Dish");
+  const [sortBy, setSortBy] = useState("New");
+  const categories = ["Other", "Dessert", "Drink", "Salad", "Dish"];
+  const visibleProducts = useMemo(() => {
+    const filtered = products.filter((product) => {
+      const matchesCategory = activeCategory === "All" || product.category === activeCategory;
+      const matchesQuery = product.productName.toLowerCase().includes(query.trim().toLowerCase());
+      return matchesCategory && matchesQuery;
+    });
+
+    if (sortBy === "Price") return [...filtered].sort((a, b) => a.price - b.price);
+    if (sortBy === "Views") return [...filtered].sort((a, b) => b.views - a.views);
+    return filtered;
+  }, [activeCategory, query, sortBy]);
+
   return (
     <div className={"products"}>
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Stack className={"avatar-big-box"}>
             <Stack className={"top-text"}>
-              <p>Bumarak Restaurant</p>
+              <p>Burak Restaurant</p>
               <Stack className={"single-search-big-box"}>
                 <input
                   type={"search"}
                   className={"single-search-input"}
                   name={"singleResearch"}
                   placeholder={"Type here"}
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
                 />
                 <Button
                   className={"single-button-search"}
@@ -50,22 +68,25 @@ export default function Products() {
             <Stack className={"dishes-filter-box"}>
               <Button
                 variant={"contained"}
-                color={"primary"}
+                color={sortBy === "New" ? "primary" : "secondary"}
                 className={"order"}
+                onClick={() => setSortBy("New")}
               >
                 New
               </Button>
               <Button
                 variant={"contained"}
-                color={"secondary"}
+                color={sortBy === "Price" ? "primary" : "secondary"}
                 className={"order"}
+                onClick={() => setSortBy("Price")}
               >
                 Price
               </Button>
               <Button
                 variant={"contained"}
-                color={"secondary"}
+                color={sortBy === "Views" ? "primary" : "secondary"}
                 className={"order"}
+                onClick={() => setSortBy("Views")}
               >
                 Views
               </Button>
@@ -75,27 +96,22 @@ export default function Products() {
           <Stack className={"list-category-section"}>
             <Stack className={"product-category"}>
               <div className={"category-main"}>
-                <Button variant={"contained"} color={"secondary"}>
-                  Other
-                </Button>
-                <Button variant={"contained"} color={"secondary"}>
-                  Dessert
-                </Button>
-                <Button variant={"contained"} color={"secondary"}>
-                  Drink
-                </Button>
-                <Button variant={"contained"} color={"secondary"}>
-                  Salad
-                </Button>
-                <Button variant={"contained"} color={"primary"}>
-                  Dish
-                </Button>
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant="contained"
+                    color={activeCategory === category ? "primary" : "secondary"}
+                    onClick={() => setActiveCategory(category)}
+                  >
+                    {category}
+                  </Button>
+                ))}
               </div>
             </Stack>
 
             <Stack className={"product-wrapper"}>
-              {products.length !== 0 ? (
-                products.map((product, index) => {
+              {visibleProducts.length !== 0 ? (
+                visibleProducts.map((product, index) => {
                   return (
                     <Stack key={index} className={"product-card"}>
                       <Stack
@@ -125,14 +141,14 @@ export default function Products() {
                         </span>
                         <div className={"product-desc"}>
                           <MonetizationOnIcon />
-                          {12}
+                          {product.price}
                         </div>
                       </Box>
                     </Stack>
                   );
                 })
               ) : (
-                <Box className="no-data">Products are not available!</Box>
+                <Box className="no-data">No matching dishes found.</Box>
               )}
             </Stack>
           </Stack>
@@ -161,16 +177,16 @@ export default function Products() {
           <Box className={"category-title"}>Our Family Brands</Box>
           <Stack className={"brand-list"}>
             <Box className={"review-box"}>
-              <img src={"/img/gurme.png"} />
+              <img src={"/img/gurme.webp"} alt="Burak Gurme" />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/seafood.png"} />
+              <img src={"/img/seafood.webp"} alt="Burak Seafood" />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/doner.png"} />
+              <img src={"/img/sweets.webp"} alt="Burak Sweets" />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/sweets.png"} />
+              <img src={"/img/doner.webp"} alt="Burak Doner" />
             </Box>
           </Stack>
         </Container>
@@ -182,7 +198,7 @@ export default function Products() {
             <Box className={"title"}>Our address</Box>
             <iframe
               style={{ marginTop: "60px" }}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96326.03685561026!2d28.92022666528895!3d41.02112846139867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab82bea99445f%3A0x6ed7f4baceb4476c!2sMaiden&#39;s%20Tower!5e0!3m2!1sen!2skr!4v1757106097524!5m2!1sen!2skr"
+              src="https://maps.google.com/maps?q=Downtown%20Dubai&t=&z=14&ie=UTF8&iwloc=&output=embed"
               width="1320"
               height="500"
               referrerPolicy="no-referrer-when-downgrade"

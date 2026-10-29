@@ -48,8 +48,9 @@ export default function OrdersPage() {
             <Box className={"member-box"}>
               <div className={"order-user-img"}>
                 <img
-                  src={"/icons/default-user.svg"}
+                  src={"/img/justin.webp"}
                   className={"order-user-avatar"}
+                  alt="Justin"
                 />
                 <div className={"order-user-icon-box"}>
                   <img
@@ -58,7 +59,7 @@ export default function OrdersPage() {
                   />
                 </div>
               </div>
-              <span className={"order-user-name"}>Martin</span>
+              <span className={"order-user-name"}>Justin</span>
               <span className={"order-user-prof"}>User</span>
             </Box>
             <Box className={"liner"}></Box>
@@ -66,7 +67,7 @@ export default function OrdersPage() {
               <div style={{ display: "flex" }}>
                 <LocationOnIcon />
               </div>
-              <div className={"spec-address-txt"}>Do not exist</div>
+              <div className={"spec-address-txt"}>Burak Restaurant</div>
             </Box>
           </Box>
           <Box className={"order-info-box"} sx={{ mt: "15px" }}>

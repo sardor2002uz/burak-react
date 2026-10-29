@@ -1,9 +1,11 @@
 import { Box, Button, Container, Stack } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Basket from "./Basket";
 
 export default function OtherNavbar() {
-  const authMember = null;
+  const isOrdersPage = useLocation().pathname.startsWith("/orders");
+  const isMemberPage = useLocation().pathname.startsWith("/member-page");
+  const authMember = isOrdersPage || isMemberPage;
 
   return (
     <div className="other-navbar">
@@ -11,7 +13,7 @@ export default function OtherNavbar() {
         <Stack className="menu">
           <Box>
             <NavLink to="/">
-              <img className="brand-logo" src="/icons/bumarak.svg" />
+              <span className="brand-wordmark">BURAK</span>
             </NavLink>
           </Box>
           <Stack className="links">
@@ -30,13 +32,11 @@ export default function OtherNavbar() {
                 </NavLink>
               </Box>
             ) : null}
-            {authMember ? (
-              <Box className={"hover-line"}>
-                <NavLink to="/member-page" activeClassName={"underline"}>
-                  My Page
-                </NavLink>
-              </Box>
-            ) : null}
+            <Box className={"hover-line"}>
+              <NavLink to="/member-page" activeClassName={"underline"}>
+                MyPage
+              </NavLink>
+            </Box>
             <Box className={"hover-line"}>
               <NavLink to="/help" activeClassName={"underline"}>
                 Help
@@ -53,7 +53,8 @@ export default function OtherNavbar() {
             ) : (
               <img
                 className="user-avatar"
-                src={"/icons/default-user.svg"}
+                src={authMember ? "/img/justin.webp" : "/icons/default-user.svg"}
+                alt="User profile"
                 aria-haspopup={"true"}
               />
             )}

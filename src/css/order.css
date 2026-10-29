@@ -340,3 +340,417 @@
 	line-height: 36px;
 	color: #000000;
 }
+
+/** PAUSED ORDERS REFERENCE LAYOUT **/
+
+.order-page {
+	box-sizing: border-box;
+	min-height: 273px;
+	background: #f7f6fb;
+}
+
+.order-page .order-container.MuiContainer-root {
+	box-sizing: border-box;
+	width: min(64vw, 1040px);
+	max-width: none;
+	gap: 14px;
+	margin: 6px auto 16px;
+	padding: 0;
+}
+
+.order-page .order-left {
+	flex: 2.2 1 0;
+	width: auto;
+	min-width: 0;
+}
+
+.order-page .order-right {
+	flex: 1 1 0;
+	width: auto;
+	min-width: 0;
+	margin: 27px 0 0;
+}
+
+.order-page .order-left .order-nav-frame {
+	height: 27px;
+	justify-content: flex-start;
+	border-color: #dedbe2;
+}
+
+.order-page .order-left .order-nav-frame>.MuiBox-root {
+	width: 100%;
+}
+
+.order-page .order-left .order-nav-frame .MuiTabs-root {
+	min-height: 27px;
+}
+
+.order-page .order-left .order-nav-frame .MuiTab-root {
+	min-width: 0;
+	min-height: 27px;
+	padding: 4px 8px;
+	color: #ae8150;
+	font-size: 6px;
+}
+
+.order-page .order-left .order-nav-frame .Mui-selected {
+	color: #222;
+}
+
+.order-page .order-left .order-nav-frame .MuiTabs-indicator {
+	background: #343434;
+}
+
+.order-page .order-main-content {
+	width: 100%;
+}
+
+.order-page .order-main-content .MuiTabPanel-root {
+	padding: 0;
+}
+
+.order-page .order-main-content .order-main-box {
+	box-sizing: border-box;
+	width: 100%;
+	max-height: none;
+	margin: 0 0 10px;
+	padding: 2px 6px;
+	border: 1px solid #d5d3dd;
+	border-radius: 6px;
+	background: #f8f8ff;
+	box-shadow: 0 1px 5px rgb(24 23 112 / 24%);
+}
+
+.order-page .order-main-content .order-main-box .order-box-scroll {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 0;
+	max-height: none;
+	margin: 0;
+	overflow: hidden;
+}
+
+.order-page .order-box-scroll .orders-name-price {
+	box-sizing: border-box;
+	width: 100%;
+	height: 12px;
+	margin: 1px 0;
+	gap: 5px;
+}
+
+.order-page .order-box-scroll .orders-name-price .order-dish-img {
+	flex: 0 0 12px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+}
+
+.order-page .order-box-scroll .orders-name-price .title-dish {
+	flex: 1 1 auto;
+	width: auto;
+	height: auto;
+	min-width: 0;
+	margin: 0;
+	font: 500 8px/1.2 Arial, sans-serif;
+}
+
+.order-page .order-box-scroll .orders-name-price .price-box {
+	flex: 0 0 104px;
+	width: 104px;
+	max-width: none;
+	justify-content: space-between;
+	gap: 3px;
+	margin: 0;
+}
+
+.order-page .order-box-scroll .orders-name-price .price-box p {
+	margin: 0 !important;
+	font: 400 7px/1 Arial, sans-serif;
+}
+
+.order-page .order-box-scroll .orders-name-price .price-box img {
+	width: 6px;
+	height: 6px;
+}
+
+.order-page .order-main-content .order-main-box .total-price-box {
+	box-sizing: border-box;
+	height: 14px;
+	margin: 1px 0 0;
+	justify-content: space-between;
+	gap: 3px;
+}
+
+.order-page .order-main-content .order-main-box .total-price-box .box-total {
+	flex: 1 1 auto;
+	min-width: 0;
+	justify-content: space-between;
+}
+
+.order-page .total-price-box .box-total p {
+	margin: 0 2px;
+	font: 500 5px/1.1 Arial, sans-serif;
+	white-space: nowrap;
+}
+
+.order-page .order-main-content .order-main-box .total-price-box .box-total img {
+	width: 5px;
+	height: 5px;
+	margin: 0 !important;
+}
+
+.order-page .order-main-content .total-price-box .cancel-button,
+.order-page .order-main-content .total-price-box .pay-button,
+.order-page .order-main-content .total-price-box .verify-button {
+	min-width: 31px;
+	height: 12px;
+	min-height: 12px;
+	padding: 1px 4px;
+	border-radius: 2px;
+	box-shadow: none;
+	font-size: 5px;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.order-page .order-main-box:has(.data-compl) .total-price-box {
+	gap: 2px;
+}
+
+.order-page .order-main-box:has(.data-compl) .total-price-box .data-compl {
+	flex: 0 0 auto;
+	margin: 0 2px;
+	font: 500 4px/1.1 Arial, sans-serif;
+	white-space: nowrap;
+}
+
+.order-page .order-main-box:has(.data-compl) .total-price-box .verify-button {
+	flex: 0 0 37px;
+	min-width: 37px;
+	background: #1686d9;
+	color: #fff;
+}
+
+.order-page .order-right .order-info-box {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 0 10px;
+	padding: 6px;
+	border: 1px solid #d5d3dd;
+	border-radius: 6px;
+	background: #f8f8ff;
+	box-shadow: 0 1px 5px rgb(24 23 112 / 24%);
+}
+
+.order-page .order-right .order-info-box .order-user-avatar {
+	width: 28px;
+	height: 28px;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+.order-page .order-right .order-user-icon-box {
+	width: 12px;
+	height: 12px;
+	top: 72%;
+	padding: 2px;
+}
+
+.order-page .order-right .order-user-icon-box img {
+	width: 100%;
+	object-fit: contain;
+}
+
+.order-page .order-info-box .order-user-name {
+	margin-top: 2px;
+	font: 600 8px/1.2 Arial, sans-serif;
+}
+
+.order-page .order-info-box .order-user-prof {
+	font: 400 6px/1.2 Arial, sans-serif;
+}
+
+.order-page .order-right .order-info-box .liner {
+	margin: 5px 0 3px;
+	border-width: 0 0 1px;
+}
+
+.order-page .order-info-box .order-user-address {
+	width: 100%;
+	align-items: center;
+}
+
+.order-page .order-info-box .order-user-address svg {
+	width: 10px;
+	height: 10px;
+}
+
+.order-page .order-info-box .spec-address-txt {
+	margin-left: 2px;
+	font: 400 6px/1.2 Arial, sans-serif;
+}
+
+.order-page .order-info-box .card-input,
+.order-page .order-info-box .card-half-input {
+	box-sizing: border-box;
+	min-width: 0;
+	height: 11px;
+	margin-top: 2px;
+	padding: 3px 5px;
+	border-radius: 2px;
+	font: 400 6px/1.2 Arial, sans-serif;
+}
+
+.order-page .order-info-box .cards-box {
+	width: 100%;
+	margin-top: 5px;
+	align-items: center;
+}
+
+.order-page .order-info-box .cards-box img {
+	width: 14px;
+	max-height: 9px;
+}
+
+body:has(.order-page) .site-footer-inner {
+	min-height: 150px;
+	padding-top: 24px;
+	padding-bottom: 12px;
+}
+
+body:has(.order-page) .footer-bottom {
+	margin-top: 8px;
+}
+
+@media (max-width: 620px) {
+	.order-page .order-container.MuiContainer-root {
+		transform: translateX(4px);
+	}
+
+	body:has(.order-page) .site-footer-inner {
+		width: min(66vw, 480px);
+		height: 150px;
+		min-height: 0;
+		grid-template-columns: 1.4fr 0.6fr 1fr;
+		gap: 8px;
+		padding: 18px 0 8px;
+	}
+
+	body:has(.order-page) .footer-about {
+		grid-column: auto;
+	}
+
+	body:has(.order-page) .footer-about p {
+		margin-top: 5px;
+		font-size: 6px;
+		line-height: 1.5;
+	}
+
+	body:has(.order-page) .footer-logo,
+	body:has(.order-page) .footer-wordmark {
+		width: auto;
+		height: auto;
+		font-size: 9px;
+	}
+
+	body:has(.order-page) .footer-column {
+		gap: 5px;
+		font-size: 6px;
+	}
+
+	body:has(.order-page) .footer-column h2 {
+		margin-bottom: 2px;
+		font-size: 8px;
+	}
+
+	body:has(.order-page) .footer-socials {
+		gap: 5px;
+		margin-top: 6px;
+	}
+
+	body:has(.order-page) .footer-socials a {
+		width: 12px;
+		height: 12px;
+	}
+
+	body:has(.order-page) .footer-socials img {
+		width: 9px;
+		height: 9px;
+	}
+
+	body:has(.order-page) .footer-bottom {
+		margin-top: 0;
+		padding-top: 5px;
+		font-size: 5px;
+	}
+}
+
+@media (max-width: 460px) {
+	body:has(.order-page) .site-footer-inner {
+		width: calc(100% - 24px);
+	}
+}
+
+@media (max-width: 460px) {
+	.order-page {
+		min-height: 0;
+	}
+
+	.order-page .order-container.MuiContainer-root {
+		width: 74vw;
+		flex-direction: row;
+		gap: 10px;
+	}
+
+	.order-page .order-right {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+		margin: 22px 0 0;
+	}
+
+	.order-page .order-right .order-info-box {
+		flex: none;
+		margin: 0;
+	}
+
+	.order-page .order-right .order-info-box[style] {
+		margin-top: 0 !important;
+	}
+
+	.order-page .order-left .order-nav-frame .MuiTab-root {
+		padding-right: 5px;
+		padding-left: 5px;
+		font-size: 5px;
+	}
+}
+
+@media (min-width: 391px) and (max-width: 460px) {
+	.order-page {
+		min-height: 230px;
+	}
+}
+
+@media (max-width: 390px) {
+	.order-page .order-container.MuiContainer-root {
+		width: calc(100% - 24px);
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.order-page .order-right {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 8px;
+		margin: 0 0 10px;
+	}
+
+	.order-page .order-right .order-info-box {
+		flex: 1 1 0;
+		margin: 0;
+	}
+
+	.order-page .order-right .order-info-box[style] {
+		margin-top: 0 !important;
+	}
+}

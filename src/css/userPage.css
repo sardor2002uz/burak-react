@@ -218,6 +218,7 @@
 	display: flex;
 	flex-direction: column;
 }
+
 .user-page .settings .spec-label {
 	font-family: 'Source Serif Pro';
 	font-style: normal;
@@ -334,4 +335,520 @@
 	display: flex;
 	justify-content: flex-end;
 	margin-top: 25px;
+}
+
+/** MYPAGE REFERENCE LAYOUT **/
+
+.user-page {
+	box-sizing: border-box;
+	min-height: 263px;
+	background: #f7f6fb;
+}
+
+.user-page>.MuiContainer-root {
+	width: min(66vw, 1040px);
+	max-width: none;
+	padding: 0;
+}
+
+.user-page .my-page-frame {
+	box-sizing: border-box;
+	align-items: flex-start;
+	gap: 16px;
+	padding: 12px 0 16px;
+}
+
+.my-page-frame .my-page-left {
+	flex: 2.2 1 0;
+	width: auto;
+	min-width: 0;
+}
+
+.my-page-left>.MuiBox-root {
+	width: 100%;
+}
+
+.my-page-left .menu-name {
+	display: none;
+}
+
+.my-page-left .menu-content {
+	margin: 0;
+}
+
+.user-page .settings {
+	width: 100%;
+}
+
+.user-page .settings .member-media-frame {
+	box-sizing: border-box;
+	min-height: 42px;
+	margin: 0 0 8px;
+	padding: 3px;
+	align-items: center;
+}
+
+.user-page .settings .member-media-frame .mb-image {
+	flex: 0 0 24px;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.user-page .settings .media-change-box {
+	margin-left: 6px;
+}
+
+.user-page .settings .media-change-box span {
+	font: 600 6px/1.2 Arial, sans-serif;
+}
+
+.user-page .settings .media-change-box p {
+	margin: 2px 0;
+	font: 400 5px/1.2 Arial, sans-serif;
+}
+
+.user-page .settings .up-del-box {
+	width: 11px;
+	height: 11px;
+	border-radius: 2px;
+}
+
+.user-page .settings .up-del-box button {
+	min-width: 0;
+	width: 11px;
+	height: 11px;
+	padding: 0;
+}
+
+.user-page .settings .up-del-box svg {
+	width: 8px;
+	height: 8px;
+}
+
+.user-page .settings .input-frame {
+	gap: 6px;
+	margin-bottom: 6px;
+}
+
+.user-page .settings .short-input {
+	min-width: 0;
+}
+
+.user-page .settings .spec-label {
+	color: #49464a;
+	font: 400 5px/1.1 Arial, sans-serif;
+}
+
+.user-page .settings .spec-input {
+	box-sizing: border-box;
+	min-width: 0;
+	height: 13px;
+	margin-top: 2px;
+	padding: 2px 5px;
+	border: 1px solid #d5d3dd;
+	border-radius: 1px;
+	background: #f8f8ff;
+	box-shadow: none;
+	font: 400 5px/1.1 Arial, sans-serif;
+}
+
+.user-page .settings .spec-textarea {
+	box-sizing: border-box;
+	min-height: 44px;
+	height: 44px;
+	margin-top: 2px;
+	padding: 5px;
+	border: 1px solid #d5d3dd;
+	border-radius: 1px;
+	background: #f8f8ff;
+	box-shadow: none;
+	font: 400 5px/1.2 Arial, sans-serif;
+}
+
+.user-page .settings .save-box {
+	margin-top: 4px;
+}
+
+.user-page .settings .save-box button {
+	min-width: 17px;
+	width: auto;
+	height: 10px;
+	padding: 1px 5px;
+	border-radius: 1px;
+	font: 500 5px/1 Arial, sans-serif;
+}
+
+.my-page-frame .my-page-right {
+	flex: 1 1 0;
+	width: auto;
+	min-width: 0;
+	margin: 0;
+}
+
+.user-page .order-info-box {
+	box-sizing: border-box;
+	padding: 6px;
+	border: 1px solid #d5d3dd;
+	border-radius: 6px;
+	background: #f8f8ff;
+	box-shadow: 0 1px 5px rgb(24 23 112 / 24%);
+}
+
+.user-page .order-info-box .order-user-img .order-user-avatar {
+	width: 31px;
+	height: 31px;
+	border-radius: 7px;
+	object-fit: cover;
+}
+
+.user-page .order-info-box .order-user-icon-box {
+	width: 10px;
+	height: 10px;
+	top: 72%;
+	padding: 2px;
+}
+
+.user-page .order-info-box .order-user-icon-box img {
+	width: 100%;
+	object-fit: contain;
+}
+
+.user-page .order-info-box .order-user-name {
+	margin-top: 2px;
+	font: 600 7px/1.2 Arial, sans-serif;
+}
+
+.user-page .order-info-box .order-user-prof {
+	font: 400 5px/1.4 Arial, sans-serif;
+}
+
+.user-page .order-info-box .user-media-box {
+	width: 75%;
+	margin-top: 4px;
+}
+
+.user-page .order-info-box .user-media-box svg {
+	width: 8px;
+	height: 8px;
+}
+
+.user-page .order-info-box .user-desc {
+	width: 100%;
+	margin: 3px 0 0;
+	justify-content: center;
+	font: 400 5px/1.2 Arial, sans-serif;
+}
+
+body:has(.user-page) .site-footer-inner {
+	min-height: 150px;
+	padding-top: 24px;
+	padding-bottom: 12px;
+}
+
+body:has(.user-page) .footer-bottom {
+	margin-top: 8px;
+}
+
+@media (max-width: 620px) {
+	body:has(.user-page) .site-footer-inner {
+		width: min(66vw, 480px);
+		height: 127px;
+		min-height: 0;
+		grid-template-columns: 1.4fr 0.6fr 1fr;
+		gap: 8px;
+		padding: 18px 0 8px;
+	}
+
+	body:has(.user-page) .footer-about {
+		grid-column: auto;
+	}
+
+	body:has(.user-page) .footer-about p {
+		margin-top: 5px;
+		font-size: 6px;
+		line-height: 1.5;
+	}
+
+	body:has(.user-page) .footer-wordmark {
+		font-size: 9px;
+	}
+
+	body:has(.user-page) .footer-column {
+		gap: 5px;
+		font-size: 6px;
+	}
+
+	body:has(.user-page) .footer-column h2 {
+		margin-bottom: 2px;
+		font-size: 8px;
+	}
+
+	body:has(.user-page) .footer-socials {
+		gap: 5px;
+		margin-top: 6px;
+	}
+
+	body:has(.user-page) .footer-socials a {
+		width: 12px;
+		height: 12px;
+	}
+
+	body:has(.user-page) .footer-socials img {
+		width: 9px;
+		height: 9px;
+	}
+
+	body:has(.user-page) .footer-bottom {
+		margin-top: 0;
+		padding-top: 5px;
+		font-size: 5px;
+	}
+}
+
+@media (max-width: 460px) {
+	.user-page {
+		min-height: 263px;
+	}
+
+	.user-page>.MuiContainer-root {
+		width: 68vw;
+	}
+
+	.user-page .my-page-frame {
+		gap: 16px;
+		padding-top: 20px;
+	}
+
+	body:has(.user-page) .other-navbar {
+		height: 87px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container {
+		width: 68vw;
+		padding-top: 12px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu {
+		gap: 10px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu .links {
+		gap: 7px;
+	}
+
+	body:has(.user-page) .other-navbar .hover-line a {
+		font-size: 6px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu .user-avatar {
+		width: 12px;
+		height: 12px;
+	}
+
+	body:has(.user-page) .site-footer-inner {
+		width: calc(100% - 24px);
+	}
+}
+
+@media (max-width: 320px) {
+	body:has(.user-page) .other-navbar {
+		height: 14.3vw;
+		min-height: 40px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container {
+		width: 68vw;
+		padding-top: 5px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu {
+		height: 14px;
+		gap: 5px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu .brand-wordmark {
+		font-size: 7px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu .links {
+		gap: 2px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu .links .hover-line a {
+		font-size: 4px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu .links>.hover-line:last-of-type {
+		margin-right: 0;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu .links .user-avatar {
+		width: 8px;
+		height: 8px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu .links>.hover-line:has(.MuiIconButton-root) {
+		width: 10px;
+		height: 10px;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu .links .MuiIconButton-root {
+		width: 10px;
+		height: 10px;
+		padding: 0;
+	}
+
+	body:has(.user-page) .other-navbar .navbar-container .menu .links .MuiBadge-badge {
+		min-width: 6px;
+		height: 6px;
+		padding: 0 1px;
+		font-size: 4px;
+	}
+
+	.user-page {
+		min-height: 176px;
+	}
+
+	.user-page .my-page-frame {
+		padding-top: 8px;
+		padding-bottom: 6px;
+		gap: 10px;
+	}
+
+	.user-page .settings .member-media-frame {
+		min-height: 30px;
+		margin-bottom: 4px;
+	}
+
+	.user-page .settings .member-media-frame .mb-image {
+		flex-basis: 18px;
+		width: 18px;
+		height: 18px;
+	}
+
+	.user-page .settings .media-change-box span {
+		font-size: 4px;
+	}
+
+	.user-page .settings .media-change-box p {
+		font-size: 3px;
+	}
+
+	.user-page .settings .up-del-box,
+	.user-page .settings .up-del-box button {
+		width: 8px;
+		height: 8px;
+	}
+
+	.user-page .settings .up-del-box svg {
+		width: 6px;
+		height: 6px;
+	}
+
+	.user-page .settings .input-frame {
+		gap: 4px;
+		margin-bottom: 3px;
+	}
+
+	.user-page .settings .spec-label {
+		font-size: 4px;
+	}
+
+	.user-page .settings .spec-input {
+		height: 9px;
+		margin-top: 1px;
+		padding: 1px 3px;
+		font-size: 4px;
+	}
+
+	.user-page .settings .spec-textarea {
+		min-height: 28px;
+		height: 28px;
+		margin-top: 1px;
+		padding: 3px;
+		font-size: 4px;
+	}
+
+	.user-page .settings .save-box {
+		margin-top: 2px;
+	}
+
+	.user-page .settings .save-box button {
+		height: 8px;
+		padding: 1px 3px;
+		font-size: 4px;
+	}
+
+	.user-page .order-info-box {
+		padding: 4px;
+	}
+
+	.user-page .order-info-box .order-user-img .order-user-avatar {
+		width: 24px;
+		height: 24px;
+	}
+
+	.user-page .order-info-box .order-user-name {
+		font-size: 5px;
+	}
+
+	.user-page .order-info-box .order-user-prof,
+	.user-page .order-info-box .user-desc {
+		font-size: 4px;
+	}
+
+	.user-page .order-info-box .user-media-box {
+		margin-top: 2px;
+	}
+
+	.user-page .order-info-box .user-media-box svg {
+		width: 6px;
+		height: 6px;
+	}
+
+	body:has(.user-page) .site-footer-inner {
+		width: 68vw;
+		height: 66px;
+		padding: 8px 0 4px;
+		gap: 4px;
+	}
+
+	body:has(.user-page) .footer-about p {
+		font-size: 3px;
+	}
+
+	body:has(.user-page) .footer-wordmark {
+		font-size: 6px;
+	}
+
+	body:has(.user-page) .footer-column {
+		gap: 3px;
+		font-size: 3px;
+	}
+
+	body:has(.user-page) .footer-column h2 {
+		font-size: 5px;
+	}
+
+	body:has(.user-page) .footer-socials {
+		gap: 3px;
+		margin-top: 3px;
+	}
+
+	body:has(.user-page) .footer-socials a {
+		width: 7px;
+		height: 7px;
+	}
+
+	body:has(.user-page) .footer-socials img {
+		width: 5px;
+		height: 5px;
+	}
+
+	body:has(.user-page) .footer-bottom {
+		padding-top: 3px;
+		font-size: 3px;
+	}
 }

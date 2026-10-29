@@ -4,6 +4,12 @@ import Button from "@mui/material/Button";
 import TabPanel from "@mui/lab/TabPanel";
 
 export default function PausedOrders() {
+  const dishes = [
+    { name: "Steak", image: "/img/cutlet.webp", price: 10 },
+    { name: "Fried chicken", image: "/img/kebab-fresh.webp", price: 10 },
+    { name: "Winner", image: "/img/kebab.webp", price: 20 },
+  ];
+
   return (
     <TabPanel value={"1"}>
       <Stack>
@@ -11,20 +17,21 @@ export default function PausedOrders() {
           return (
             <Box key={index} className={"order-main-box"}>
               <Box className={"order-box-scroll"}>
-                {[1, 2, 3].map((ele2, index2) => {
+                {dishes.map((dish) => {
                   return (
-                    <Box key={index2} className={"orders-name-price"}>
+                    <Box key={dish.name} className={"orders-name-price"}>
                       <img
-                        src={"/img/lavash.webp"}
+                        src={dish.image}
                         className={"order-dish-img"}
+                        alt={dish.name}
                       />
-                      <p className={"title-dish"}>Lavash</p>
+                      <p className={"title-dish"}>{dish.name}</p>
                       <Box className={"price-box"}>
-                        <p>$9</p>
+                        <p>${dish.price}</p>
                         <img src={"/icons/close.svg"} />
                         <p>2</p>
                         <img src={"/icons/pause.svg"} />
-                        <p style={{ marginLeft: "15px" }}>$24</p>
+                        <p style={{ marginLeft: "15px" }}>${dish.price * 2}</p>
                       </Box>
                     </Box>
                   );
@@ -34,7 +41,7 @@ export default function PausedOrders() {
               <Box className={"total-price-box"}>
                 <Box className={"box-total"}>
                   <p>Product price</p>
-                  <p>$18</p>
+                  <p>$80</p>
                   <img src={"/icons/plus.svg"} style={{ marginLeft: "20px" }} />
                   <p>Delivery cost</p>
                   <p>$2</p>
@@ -43,7 +50,7 @@ export default function PausedOrders() {
                     style={{ marginLeft: "20px" }}
                   />
                   <p>Total</p>
-                  <p>$20</p>
+                  <p>$82</p>
                 </Box>
                 <Button
                   variant="contained"
@@ -60,14 +67,6 @@ export default function PausedOrders() {
           );
         })}
 
-        {true && (
-          <Box display={"flex"} flexDirection={"row"} justifyContent={"center"}>
-            <img
-              src={"/icons/noimage-list.svg"}
-              style={{ width: 300, height: 300 }}
-            />
-          </Box>
-        )}
       </Stack>
     </TabPanel>
   );

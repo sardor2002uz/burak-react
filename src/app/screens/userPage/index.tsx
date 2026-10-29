@@ -29,16 +29,17 @@ export default function UserPage() {
               >
                 <div className={"order-user-img"}>
                   <img
-                    src={"/icons/default-user.svg"}
+                    src={"/img/justin.webp"}
                     className={"order-user-avatar"}
+                    alt="Justin"
                   />
                   <div className={"order-user-icon-box"}>
                     <img src={"/icons/user-badge.svg"} />
                   </div>
                 </div>
-                <span className={"order-user-name"}>Martin</span>
+                <span className={"order-user-name"}>Justin</span>
                 <span className={"order-user-prof"}>User</span>
-                <span className={"order-user-prof"}>No address</span>
+                <span className={"order-user-prof"}>Burak Restaurant</span>
               </Box>
               <Box className={"user-media-box"}>
                 <FacebookIcon />
@@ -46,7 +47,7 @@ export default function UserPage() {
                 <TelegramIcon />
                 <YouTubeIcon />
               </Box>
-              <p className={"user-desc"}>no description</p>
+              <p className={"user-desc"}>The best meal</p>
             </Box>
           </Stack>
         </Stack>

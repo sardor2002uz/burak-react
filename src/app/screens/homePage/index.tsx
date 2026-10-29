@@ -9,13 +9,13 @@ import "../../../css/home.css";
 
 export default function HomePage() {
   return (
-    <div className={"homepage"}>
+    <main className="homepage">
       <Statistics />
       <PopularDishes />
       <NewDishes />
       <Advertisement />
       <ActiveUsers />
       <Events />
-    </div>
+    </main>
   );
 }

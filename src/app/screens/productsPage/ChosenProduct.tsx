@@ -5,12 +5,7 @@ import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Divider from "../../components/divider";
 import Button from "@mui/material/Button";
 import Rating from "@mui/material/Rating";
-import { useParams } from "react-router-dom"; // @ts-ignore
-import { FreeMode, Navigation, Thumbs } from "swiper";
 import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
 
 export default function ChosenProduct() {
   return (
@@ -21,15 +16,13 @@ export default function ChosenProduct() {
           <Swiper
             loop={true}
             spaceBetween={10}
-            navigation={true}
-            modules={[FreeMode, Navigation, Thumbs]}
             className="swiper-area"
           >
-            {["/img/cutlet.webp", "/img/kebab-fresh.webp"].map(
+            {["/img/kebab-fresh.webp", "/img/kebab.webp"].map(
               (ele: string, index: number) => {
                 return (
                   <SwiperSlide key={index}>
-                    <img className="slider-image" src={ele} />
+                    <img className="slider-image" src={ele} alt="FR Kebab" />
                   </SwiperSlide>
                 );
               },
@@ -38,26 +31,30 @@ export default function ChosenProduct() {
         </Stack>
         <Stack className={"chosen-product-info"}>
           <Box className={"info-box"}>
-            <strong className={"product-name"}>Kebab</strong>
-            <span className={"resto-name"}>Burak</span>
-            <span className={"resto-name"}>010-2469-4424</span>
+            <strong className={"product-name"}>FR Kebab</strong>
             <Box className={"rating-box"}>
-              <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+              <Rating
+                name="product-rating"
+                value={3}
+                precision={0.5}
+                size="small"
+                readOnly
+              />
               <div className={"evaluation-box"}>
                 <div className={"product-view"}>
-                  <RemoveRedEyeIcon sx={{ mr: "10px" }} />
-                  <span>20</span>
+                  <RemoveRedEyeIcon fontSize="small" />
+                  <span>10 pc</span>
                 </div>
               </div>
             </Box>
-            <p className={"product-desc"}>No Description</p>
-            <Divider height="1" width="100%" bg="#000000" />
+            <p className={"product-desc"}>This is Kebab with Fruits.</p>
+            <Divider height="1" width="100%" bg="#b8b8b8" />
             <div className={"product-price"}>
               <span>Price:</span>
-              <span>$12</span>
+              <span>$ 15</span>
             </div>
             <div className={"button-box"}>
-              <Button variant="contained">Add To Basket</Button>
+              <Button variant="contained">ADD TO BASKET</Button>
             </div>
           </Box>
         </Stack>
